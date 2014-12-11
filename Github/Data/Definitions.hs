@@ -71,6 +71,11 @@ data GithubOwner = GithubUser {
   ,githubOwnerId :: Int
 } deriving (Show, Data, Typeable, Eq, Ord)
 
+data GithubTeam = GithubTeam {
+   githubTeamName :: String
+  ,githubTeamId :: Int
+  } deriving (Show, Data, Typeable, Eq, Ord)
+
 data GitUser = GitUser {
    gitUserName  :: String
   ,gitUserEmail :: String

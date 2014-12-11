@@ -80,6 +80,13 @@ instance FromJSON GithubOwner where
                  <*> o .: "gravatar_id"
   parseJSON v          = fail $ "Could not build a GithubOwner out of " ++ (show v)
 
+instance FromJSON GithubTeam where
+  parseJSON (Object o) =
+    GithubTeam
+      <$> o .: "name"
+      <*> o .: "id"
+  parseJSON _ = mzero
+
 instance FromJSON GitUser where
   parseJSON (Object o) =
     GitUser <$> o .: "name"
